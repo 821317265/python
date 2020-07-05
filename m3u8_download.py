@@ -169,14 +169,7 @@ def plan(name_and_count, download_file_count):
     print('当前进度：{:.2%}'.format(download_file_count/len(name_and_count[1])))
 
 
-def main():
-    http = [
-
-
-            'https://zmee22.com/video/show/id/36047',
-
-
-            ]
+def main(http):
     # url = 'https://video.lllwo2o.com:8091/20180510/pacopacomama_101114_266/650kb/hls/index.m3u8'
     m3u8_list = init_one(http)   # 返回全部网页的m3u8地址，片名 ，续下载值。
     count = 0                       # 计数从m3u8_list 提取相应的影片名字
@@ -318,5 +311,15 @@ if __name__ == '__main__':
     temporary = 'D:/AllDownload/临时存储/'
     init()
     COUNT = 0                       # 计数，计算下载完成了多少个文件，用来显示当前下载进度在:def download_ts 中使用
-    main()
+    # http是你需要下载的url，也可以是m3u8地址。如：https://videozm.whqhyg.com:8091/20200421/057DR8hH/1000kb/hls/index.m3u8
+    # 可以放置多个地址。
+    
+    http = [
+
+
+            'https://zmee22.com/video/show/id/36047',
+
+
+            ]
+    main(http)
 
